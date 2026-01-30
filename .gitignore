@@ -1,0 +1,20 @@
+# Ambiente virtual
+.venv/
+venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Configurações do PyCharm
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Arquivos de dados (evita subir datasets grandes)
+ecommerce_preparados.csv
+
+
+# Sistema
+.DS_Store
