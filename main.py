@@ -31,6 +31,19 @@ df = pd.read_csv('ecommerce_preparados.csv')
 print(df.head().to_string())
 print(df.tail().to_string())
 
-# Gráfico de histograma
-# As variáveis que serão avaliadas serão Material e Temporada, para saber se existe correlação
+# Gráfico de Histograma - Cód da Marca com o Preço
+sns.jointplot(x='Marca_Cod', y='Preço', data=df, kind='hist')
+plt.show()
+
+# Gráfico de Dispersão
+# As variáveis que serão avaliadas serão Material e Temporada, para saber se existe correlação do tipo do Material com as condições climáticas
+
+sns.jointplot(x='Material_Cod', y='Temporada_Cod', data=df, kind='scatter')
+plt.show()
+
+# Mapa de Calor - Desconto com a Temporada_Cod e Marca_Cod
+corr = df[['Marca_Cod', 'Temporada_Cod', 'Desconto']].corr()
+sns.heatmap(corr, annot=True, cmap='Blues')
+plt.show()
+
 
